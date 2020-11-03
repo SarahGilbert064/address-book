@@ -52,6 +52,8 @@ function AddressType() {
   this.home = [];
 }
 
+// let physicalAddress = [homeAddress, workAddress];
+
 Contact.prototype.fullName = function() {
   return this.firstName + " " + this.lastName;
 }
@@ -68,9 +70,7 @@ AddressType.prototype.addHome = function(homeArray) {
   };
 };
 
-// Contact.prototype.emailAddress = function() {
-//   return this.emailAddress = "";
-// }
+
 
 // User Interface Logic ---------
 let addressBook = new AddressBook();
@@ -101,6 +101,7 @@ function attachContactListeners() {
   $("ul#contacts").on("click", "li", function() {
     showContact(this.id);
   });
+  
   $("#buttons").on("click", ".deleteButton", function() {
     addressBook.deleteContact(this.id);
     $("#show-contact").hide();
